@@ -41,7 +41,7 @@ public class AddControllerAnnonce extends HttpServlet {
 			Annonce a = new Annonce(titre, date, urlPhoto, prix, categorie, description, id_utilisateur);
 			service.create(a);
 			
-			request.getRequestDispatcher("show").forward(request, response);
+			request.getRequestDispatcher("showannonce").forward(request, response);
 			
 		} catch (Exception e) {
 			 doGet(request, response);

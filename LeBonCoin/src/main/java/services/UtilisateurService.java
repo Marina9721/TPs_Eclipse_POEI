@@ -63,7 +63,7 @@ public class UtilisateurService {
 			Connection con = UtileConnection.seConnecter();
 			
 			PreparedStatement ps = con.prepareStatement("INSERT INTO utilisateurs(nomUtilisateur, nom, prenom, email, motDePasse)"
-					+ "VALUES(?,?,?,?,?,?,?);");
+					+ "VALUES(?,?,?,?,?);");
 			ps.setString(1, u.getNomUtilisateur());
 			ps.setString(2, u.getNom());
 			ps.setString(3, u.getPrenom());

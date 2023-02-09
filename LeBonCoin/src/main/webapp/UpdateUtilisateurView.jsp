@@ -12,10 +12,10 @@
 		
 		<form method="post" >
 			<label for="txtId">Id</label>
-			<input type="number" name="txtId" disabled="disabled" value="${utilisateur.id}"></br>
+			<input type="number" name="txtId" disabled="disabled" value="${utilisateur.id}"><br/>
 			
 			<label for='nomUtilisateur'>Nom utilisateur : </label>
-			<input type='text' name='nomUtilisateur' value="${utilisateur.nomutilisateur}"> <br/>
+			<input type='text' name='nomUtilisateur' value="${utilisateur.nomUtilisateur}"> <br/>
 				
 			<label for='txtNom'>Nom : </label>
 			<input type='text' name='txtNom' value="${utilisateur.nom}"> <br/>
@@ -27,7 +27,7 @@
 			<input type='text' name='email' value="${utilisateur.email}"> <br/>
 				
 			<label for='motDePasse'>Mot de passe: </label>
-			<input type='password' name='motDePasse' value="${utilisateur.motdepasse}"> <br/>
+			<input type='password' name='motDePasse' value="${utilisateur.motDePasse}"> <br/>
 				
 			<input type='submit' value='Valider'>
 		</form>

@@ -41,7 +41,6 @@ public class UpdateControllerAnnonce extends HttpServlet {
 			
 			int id = Integer.parseInt(request.getParameter("id"));
 			String titre = request.getParameter("txtTitre");
-			String datePublication = request.getParameter("datePublication");
 			String photos = request.getParameter("photos");
 			int prix = Integer.parseInt(request.getParameter("prix"));
 			String description = request.getParameter("description");
