@@ -8,7 +8,6 @@ public class Annonce {
 	private int prix;
 	private String description;
 	private String categorie;
-	
 	private int id_utilisateur;
 	
 	public Annonce() {
@@ -49,6 +48,7 @@ public class Annonce {
 		this.description = description;
 		this.categorie = categorie;
 	}
+
 
 	public int getId() {
 		return id;

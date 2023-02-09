@@ -3,11 +3,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 		<meta charset="ISO-8859-1">
 		<title>Update View</title>
 	</head>
 	
 	<body>
+	<div class="topnav">
+				  <a class="active" href="index.html">Accueil</a>
+				  <a href="ShowAnnonceView.jsp">Annonces</a>
+				  <a href="ShowUtilisateurView.jsp">Liste des utilisateurs</a>
+				  <a href="">A propos de nous</a>
+				  <a href="CreateUtilisateur.jsp">Créer un compte</a>
+				  <a href="">Se connecter</a>
+			</div>
+	
     	<h1>Modifier une annonce :</h1>
     
    		 <form method="post">
@@ -36,7 +46,7 @@
 	        <label for='description'>Description</label>
 	        <input type='text' name='description' value="${annonce.description}"> <br/>
 	        
-	        <input type='submit' value='Valider'>
+	        <input type='submit' value='Confirmer'>
     	</form>
     
 	</body>

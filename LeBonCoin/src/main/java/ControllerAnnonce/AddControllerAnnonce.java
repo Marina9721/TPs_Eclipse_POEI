@@ -32,11 +32,11 @@ public class AddControllerAnnonce extends HttpServlet {
 			String date = request.getParameter("txtDate");
 			String urlPhoto = request.getParameter("urlPhoto");
 			int prix = Integer.parseInt(request.getParameter("prix"));
-			String categorie = request.getParameter("categorie");
 			String description = request.getParameter("description");
+			String categorie = request.getParameter("categorie");
 			int id_utilisateur = Integer.parseInt(request.getParameter("id_utilisateur"));
 
-			Annonce a = new Annonce(titre, date, urlPhoto, prix, categorie, description, id_utilisateur);
+			Annonce a = new Annonce(titre, date, urlPhoto, prix, description, categorie, id_utilisateur);
 			service.create(a);
 			
 			request.getRequestDispatcher("showannonce").forward(request, response);

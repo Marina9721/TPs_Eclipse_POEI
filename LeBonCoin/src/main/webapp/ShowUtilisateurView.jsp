@@ -6,23 +6,34 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    
         <meta charset="ISO-8859-1">
         <title>Show View</title>
     </head>
+    
     <body>
+    		<div class="topnav">
+				  <a class="active" href="index.html">Accueil</a>
+				  <a href="ShowAnnonceView.jsp">Annonces</a>
+				  <a href="ShowUtilisateurView.jsp">Liste des utilisateurs</a>
+				  <a href="">A propos de nous</a>
+				  <a href="CreateUtilisateur.jsp">Créer un compte</a>
+				  <a href="">Se connecter</a>
+			</div>
+    
+    
         <h1>Liste des utilisateurs :</h1>
         
         <table>
             <thead>
                 <tr> 
-                    <th>id Utilisateur</th>
-                    <th>nom Utilisateur</th>
-                    <th>nom</th> 
-                    <th>prenom</th>
-                    <th>email</th>
-                    <th>mot de passe</th>
-                    <th>update</th>
-                    <th>delete</th>
+                    <th>id utilisateur</th>
+                    <th>Nom utilisateur</th>
+                    <th>Nom</th> 
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Mot de passe</th>
                 </tr>
             </thead>
             
@@ -35,14 +46,14 @@
                         <td> <%= c.getPrenom() %> </td>
                         <td> <%= c.getEmail() %> </td>
                         <td> <%= c.getMotDePasse() %> </td>
-                        <td> <a href='/LeBonCoin/updateutilisateur?id=<%= c.getId() %>'>update</a> </td>
-                        <td> <a href='/LeBonCoin/deleteutilisateur?id=<%= c.getId() %>'>delete</a> </td>
+                        <td> <a href='/LeBonCoin/updateutilisateur?id=<%= c.getId() %>'><button id="mybutton">Mettre à jour</button></a> </td>
+                        <td> <a href='/LeBonCoin/deleteutilisateur?id=<%= c.getId() %>'><button id="mybutton">Supprimer</button></a> </td>
                     </tr>
                 <% } %>
             </tbody>
         </table>
         
-        <a href='/LeBonCoin/addutilisateur'>Create</a>
+        <a href='/LeBonCoin/addutilisateur'><button id="mybutton">Créer un compte</button></a>
         
     </body>
 </html>

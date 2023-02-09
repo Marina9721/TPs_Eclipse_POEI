@@ -97,14 +97,15 @@ public class AnnonceService {
 		try {
 			Connection con = UtileConnection.seConnecter();
 			
-			PreparedStatement ps = con.prepareStatement("INSERT INTO annonces(titre, datePublication, photos, prix, description, categorie, id_utilisateur)"
-					+ "VALUES(?,?,?,?,?,?,?);");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO annonces(titre, datePublication, photos, prix, description, "
+					+ "categorie) VALUES(?,?,?,?,?,?);");
 			ps.setString(1, a.getTitre());
 			ps.setString(2, a.getDatePublication());
 			ps.setString(3, a.getPhotos());
 			ps.setInt(4, a.getPrix());
 			ps.setString(5, a.getDescription());
 			ps.setString(6, a.getCategorie());
+			//ps.setInt(7, a.getId_utilisateur());
 			
 			ps.executeUpdate();
 			
@@ -118,7 +119,8 @@ public class AnnonceService {
 		try {
 			Connection con = UtileConnection.seConnecter();
 			
-			PreparedStatement ps = con.prepareStatement("UPDATE annonces SET titre=?, photos=?, prix=?, description=?, categorie=? WHERE id=?;");
+			PreparedStatement ps = con.prepareStatement("UPDATE annonces SET titre=?, photos=?, prix=?, description=?, "
+					+ "categorie=? WHERE id=?;");
 			ps.setString(1, a.getTitre());
 			ps.setString(2, a.getPhotos());
 			ps.setInt(3, a.getPrix());
