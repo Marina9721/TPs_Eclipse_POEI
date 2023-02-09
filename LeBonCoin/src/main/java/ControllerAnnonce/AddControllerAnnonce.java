@@ -14,14 +14,12 @@ import services.AnnonceService;
 @WebServlet("/addannonce")
 public class AddControllerAnnonce extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	AnnonceService service;
 	
 	public AddControllerAnnonce() {
 		super();
 		service = new AnnonceService();
 	}
-	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("CreateAnnonce.jsp").forward(request, response);

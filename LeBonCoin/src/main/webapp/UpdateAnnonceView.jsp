@@ -10,18 +10,20 @@
 	<body>
     	<h1>Modifier une annonce :</h1>
     
-   		 <form action="/LeBonCoin/addannonce" method="post">
-	        <label for='txtTitre'>titre</label>
-	        <input type='text' name='txtTitre'> <br/>
+   		 <form method="post">
+   		 	<label for="txtId">Id</label>
+			<input type="number" name="txtId" disabled="disabled" value="${annonce.id}"><br/>
+			
+	        <label for='txtTitre'>Titre</label>
+	        <input type='text' name='txtTitre' value="${annonce.titre}"> <br/>
 	        
-	            <label>categories</label>
+	            <label>Categorie</label>
 	            <select name = "categorie">
 	            <option value="immobilier">Immobilier</option>
 	            <option value="voiture">Voiture</option>
 	            <option value="divers">Divers</option>
 	            </select>
-	            
-	        </input>
+
 	        
 	        <br/>
 	        

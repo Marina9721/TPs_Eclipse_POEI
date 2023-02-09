@@ -26,7 +26,7 @@ public class DeleteControllerAnnonce extends HttpServlet {
 		} catch (Exception e) {
 
 		}
-		request.getRequestDispatcher("show").forward(request, response);
+		request.getRequestDispatcher("showannonce").forward(request, response);
 	}
 
 }

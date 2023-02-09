@@ -39,6 +39,34 @@ public class AnnonceService {
 		return null;
 	}
 	
+	public Annonce getById(int id) {
+		try {
+			Connection con = UtileConnection.seConnecter();
+			
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM annonces WHERE id=?;");
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				String titre = rs.getString("titre");
+				String datePublication = rs.getString("datePublication");
+				String photos = rs.getString("photos");
+				int prix = rs.getInt("prix");
+				String description = rs.getString("description");
+				String categorie = rs.getString("categorie");
+				int id_utilisateur = rs.getInt("id_utilisateur");
+				
+				return new Annonce(titre, datePublication, photos, prix, description, categorie, id_utilisateur);
+			}
+			
+			con.close();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public ArrayList<Annonce> getAll(){
 		ArrayList<Annonce> listeAnnonces = new ArrayList<>();
 		try {
@@ -90,15 +118,13 @@ public class AnnonceService {
 		try {
 			Connection con = UtileConnection.seConnecter();
 			
-			PreparedStatement ps = con.prepareStatement("UPDATE annonces SET titre=?, datePublication=?, photos=?, prix=?, "
-					+ "description=?, categorie=?, id_utilisateur=? WHERE id=?;");
+			PreparedStatement ps = con.prepareStatement("UPDATE annonces SET titre=?, photos=?, prix=?, description=?, categorie=? WHERE id=?;");
 			ps.setString(1, a.getTitre());
-			ps.setString(2, a.getDatePublication());
-			ps.setString(3, a.getPhotos());
-			ps.setInt(4, a.getPrix());
-			ps.setString(5, a.getDescription());
-			ps.setString(6, a.getCategorie());
-			ps.setInt(7, a.getId());
+			ps.setString(2, a.getPhotos());
+			ps.setInt(3, a.getPrix());
+			ps.setString(4, a.getDescription());
+			ps.setString(5, a.getCategorie());
+			ps.setInt(6, a.getId());
 			
 			ps.executeUpdate();
 			

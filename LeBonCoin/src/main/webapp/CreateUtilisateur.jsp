@@ -7,7 +7,7 @@
 		<title>Create View</title>
 	</head>
 		<body>
-			<h1>Create Utilisateur</h1>
+			<h1>Créer un utilisateur</h1>
 			<form action="/LeBonCoin/addutilisateur" method="post">
 				<label for='nomUtilisateur'>Nom utilisateur : </label>
 				<input type='text' name='nomUtilisateur'> <br/>

@@ -24,14 +24,14 @@ public class UpdateControllerAnnonce extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String categorie  = "";
+		int id = -1;
 		try {
-			categorie = request.getParameter("categorie");			
+			id = Integer.parseInt(request.getParameter("id"));			
 		} 
 		catch (Exception e) {	
 		}
 		
-		Annonce a = service.getByCategorie(categorie);		
+		Annonce a = service.getById(id);		
 		request.setAttribute("annonce", a);		
 		request.getRequestDispatcher("UpdateAnnonceView.jsp").forward(request, response);
 	}
@@ -41,7 +41,7 @@ public class UpdateControllerAnnonce extends HttpServlet {
 			
 			int id = Integer.parseInt(request.getParameter("id"));
 			String titre = request.getParameter("txtTitre");
-			String photos = request.getParameter("photos");
+			String photos = request.getParameter("urlPhoto");
 			int prix = Integer.parseInt(request.getParameter("prix"));
 			String description = request.getParameter("description");
 			String categorie = request.getParameter("categorie");
